@@ -1,4 +1,4 @@
-FROM node:18-bullseye
+FROM node:20-bullseye
 
 # Install OCR dependencies
 RUN apt-get update && \
@@ -10,7 +10,6 @@ RUN apt-get update && \
 # Install n8n globally
 RUN npm install -g n8n
 
-# Use existing node user (already present in base image)
 USER node
 
 ENV N8N_PORT=10000
